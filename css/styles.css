@@ -1,92 +1,107 @@
-@import url("https://fonts.googleapis.com/css2?family=Sora:wght@200;400;500&display=swap");
+:root {
+    /* colors */
+    --white: #ffffff;
+    --ivory: #fafaf9;
+    --black-russian: #1117290d;
+    --blue-chalk: #e6d6fc;
+    --blue-violet: #883ae1;
+    --raven: #6c727f;
 
-/* Reset some default styles */
-body,
-h1,
-h2,
-h3,
-p,
-ul,
-li {
-    margin: 0;
-    padding: 0;
+    /* Font family */
+    --font-sora: "Sora", sans-serif;
+
+    /* Font Size */
+    --font-size-18: 1.8rem;
+    --font-size-14: 1.4rem;
+    --font-size-12: 1.2rem;
+
+    /* Border Radius */
+    --radius-16: 1.6rem;
+
+    /* Gap */
+    --gap-6: 0.6rem;
+    --gap-16: 1.6rem;
 }
 
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
+    font-size: 10px;
 }
 
-/* Add some styles for body*/
 body {
-    min-height: 100vh;
-    max-width: 1280px;
-    margin: 0 auto;
-    background: #fafaf9;
-    color: #20293a;
-    font-family: "Sora", sans-serif;
-    line-height: 1.5;
-    overflow-x: hidden;
-    padding: 4rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* flex-direction: column; */
+    height: 100vh;
+    background-color: var(--ivory);
+    font-family: var(--font-sora);
+    font-optical-sizing: auto;
 }
 
-.mb-card {
-    width: 368px;
-    /* min-width: 368px; */
-    background-color: #ffffff;
-    box-shadow: 0px 30px 100px 0px rgba(17, 23, 41, 0.05);
-    padding: 16px;
-    border-radius: 16px;
+.card {
+    background-color: var(--white);
+    border-radius: var(--radius-16);
+    width: 36.8rem;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: 5px;
-}
-
-.mb-card__image {
-    img {
-        border-radius: 12px;
-        width: 100%;
-        height: auto;
-        max-width: 368px;
-    }
-}
-
-.mb-card__meta-tag {
-    background-color: #e6d6fc;
-    width: fit-content;
-    padding: 4px 10px;
-    border-radius: 12px;
-    display: flex;
     justify-content: center;
-    align-items: center;
-
-    span {
-        font-size: 10px;
-        font-weight: bold;
-        color: #883ae1;
-    }
+    height: fit-content;
+    box-shadow: 0px 30px 100px 0px var(--black-russian);
 }
 
-.mb-card__title {
-    margin-top: 12px;
+.card__header {
+    display: flex;
+    flex-direction: column;
+    padding: 1.6rem 1.6rem 0 1.6rem;
+    gap: var(--gap-16);
 }
 
-.mb-card__separator {
-    width: 100%;
-    height: auto;
-    border: 0.5px solid #e5eaf0;
-    margin: 12px 0px;
+.card__header-picture {
+    height: 15.2rem;
+    border-radius: var(--radius-16);
 }
 
-.mb-card__caption {
-    span {
-        font-size: 12px;
-    }
+.card__header-chip {
+    padding: 0.6rem 1.6rem;
+    background-color: var(--blue-chalk);
+    color: var(--blue-violet);
+    width: fit-content;
+    border-radius: var(--radius-16);
+    font-weight: 500;
 }
 
-@media screen and (min-width: 720px) {
+.card__header-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-6);
+}
+
+.card__header-content--title {
+    font-size: var(--font-size-18);
+    font-weight: 500;
+}
+
+.card__header-content--description {
+    font-size: var(--font-size-14);
+    font-weight: 200;
+    color: var(--raven);
+}
+
+.card__splitter {
+    content: "";
+    background-color: #e5eaf0;
+    margin: 2rem 0;
+    height: 0.1rem;
+}
+
+.card__footer {
+    padding: 0 1.6rem 2rem 1.6rem;
+}
+
+.card__footer-content {
+    font-size: var(--font-size-12);
+    font-weight: 200;
+    color: var(--raven);
 }
